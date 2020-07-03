@@ -33,6 +33,7 @@
             this.buttonDIS = new System.Windows.Forms.Button();
             this.buttonBALL = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,12 +77,23 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // buttong
+            // 
+            this.buttong.Location = new System.Drawing.Point(54, 230);
+            this.buttong.Name = "buttong";
+            this.buttong.Size = new System.Drawing.Size(75, 23);
+            this.buttong.TabIndex = 4;
+            this.buttong.Text = "ggg";
+            this.buttong.UseVisualStyleBackColor = true;
+            this.buttong.Click += new System.EventHandler(this.buttong_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(196, 265);
+            this.Controls.Add(this.buttong);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonBALL);
             this.Controls.Add(this.buttonDIS);
@@ -100,5 +112,6 @@
         private System.Windows.Forms.Button buttonDIS;
         private System.Windows.Forms.Button buttonBALL;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttong;
     }
 }

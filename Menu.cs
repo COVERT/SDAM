@@ -35,5 +35,11 @@ namespace SDAM
             Form formBALLL = new BALLL();
             formBALLL.Show();
         }
+
+        private void buttong_Click(object sender, EventArgs e)
+        {
+            Form FormGRUP =new GRUPP();
+                FormGRUP.Show();
+        }
     }
 }

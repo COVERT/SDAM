@@ -24,6 +24,8 @@ namespace SDAM
             
             sUDENT.LASTNAME = textBoxLASTNAME.Text;
             sUDENT.NAME = textBoxNAME.Text;
+            sUDENT.IDGRUP = Convert.ToInt32(comboBoxGRUP.SelectedIndex.ToString().Split()[0]);
+           
             sUDENT.IDGRUP = Convert.ToInt32(textBoxGRUP.Text);
             Program.BD.SUDENT.Add(sUDENT);
             Program.BD.SaveChanges();
