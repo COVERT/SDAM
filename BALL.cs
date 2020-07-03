@@ -16,12 +16,10 @@ namespace SDAM
     {
         public int IDBALL { get; set; }
         public int IDDISS { get; set; }
-        public int IDSUDENT { get; set; }
-        public int BALL1 { get; set; }
         public int IDSTUDENT { get; set; }
+        public int BALL1 { get; set; }
     
         public virtual DISS DISS { get; set; }
         public virtual SUDENT SUDENT { get; set; }
-        public virtual SUDENT SUDENT1 { get; set; }
     }
 }

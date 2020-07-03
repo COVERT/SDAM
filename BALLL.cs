@@ -59,7 +59,7 @@ namespace SDAM
                 
                 BALL ball = new BALL();
                 
-                ball.IDSUDENT = Convert.ToInt32(comboBoxSUDENT.SelectedIndex.ToString().Split()[0]);
+                ball.IDSTUDENT = Convert.ToInt32(comboBoxSUDENT.SelectedIndex.ToString().Split()[0]);
                 ball.IDDISS = Convert.ToInt32(comboBoxDIS.SelectedIndex.ToString().Split()[0]);
                 ball.BALL1 = Convert.ToInt32(textBoxBALL.Text);
                 Program.BD.BALL.Add(ball);
@@ -134,7 +134,7 @@ namespace SDAM
             if (ListViewBALL.SelectedItems.Count == 1)
             {
                 BALL ball = ListViewBALL.SelectedItems[0].Tag as BALL;
-                ball.IDSUDENT = Convert.ToInt32(comboBoxSUDENT.SelectedIndex.ToString().Split()[0]);
+                ball.IDSTUDENT = Convert.ToInt32(comboBoxSUDENT.SelectedIndex.ToString().Split()[0]);
                 ball.IDDISS = Convert.ToInt32(comboBoxDIS.SelectedIndex.ToString().Split()[0]);
                 ball.BALL1 = Convert.ToInt32(textBoxBALL.Text);
                 Program.BD.SaveChanges();

@@ -8,7 +8,7 @@ namespace SDAM
 {
     static class Program
     {
-        public static PMEntities BD = new PMEntities();
+        public static PMEntities1 BD = new PMEntities1();
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

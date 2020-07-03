@@ -73,20 +73,20 @@
     <Compile Include="DISS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="GRUP.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRUPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRUPP.Designer.cs">
+      <DependentUpon>GRUPP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SUDENTT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SUDENTT.Designer.cs">
-      <DependentUpon>SUDENTT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GRUP.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -103,16 +103,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SUDENT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SUDENTT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUDENTT.Designer.cs">
+      <DependentUpon>SUDENTT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BALLL.resx">
       <DependentUpon>BALLL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DIS.resx">
       <DependentUpon>DIS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRUPP.resx">
+      <DependentUpon>GRUPP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -152,20 +161,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\LOGOTIP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\LOGOTIP.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

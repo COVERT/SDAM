@@ -13,10 +13,10 @@ namespace SDAM
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PMEntities : DbContext
+    public partial class PMEntities1 : DbContext
     {
-        public PMEntities()
-            : base("name=PMEntities")
+        public PMEntities1()
+            : base("name=PMEntities1")
         {
         }
     

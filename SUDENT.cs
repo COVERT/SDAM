@@ -18,7 +18,6 @@ namespace SDAM
         public SUDENT()
         {
             this.BALL = new HashSet<BALL>();
-            this.BALL1 = new HashSet<BALL>();
         }
     
         public int IDSTUDENT { get; set; }
@@ -28,7 +27,5 @@ namespace SDAM
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BALL> BALL { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BALL> BALL1 { get; set; }
     }
 }

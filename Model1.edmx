@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище PMModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище PMModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BALL">
           <Key>
             <PropertyRef Name="IDBALL" />
@@ -80,7 +80,8 @@
             <End Role="BALL" EntitySet="BALL" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -90,12 +91,10 @@
           </Key>
           <Property Name="IDBALL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IDDISS" Type="Int32" Nullable="false" />
-          <Property Name="IDSUDENT" Type="Int32" Nullable="false" />
-          <Property Name="BALL1" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DISS" Relationship="PMModel.FK_BALL_DISS" FromRole="BALL" ToRole="DISS" />
-          <NavigationProperty Name="SUDENT" Relationship="PMModel.FK_BALL_SUDENT" FromRole="BALL" ToRole="SUDENT" />
           <Property Name="IDSTUDENT" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="SUDENT1" Relationship="PMModel.FK_BALL_SUDENT1" FromRole="BALL" ToRole="SUDENT" />
+          <Property Name="BALL1" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DISS" Relationship="Self.FK_BALL_DISS" FromRole="BALL" ToRole="DISS" />
+          <NavigationProperty Name="SUDENT" Relationship="Self.FK_BALL_SUDENT" FromRole="BALL" ToRole="SUDENT" />
         </EntityType>
         <EntityType Name="DISS">
           <Key>
@@ -106,7 +105,7 @@
           <Property Name="PREPOD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SEMESTOR" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GOD" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="BALL" Relationship="PMModel.FK_BALL_DISS" FromRole="DISS" ToRole="BALL" />
+          <NavigationProperty Name="BALL" Relationship="Self.FK_BALL_DISS" FromRole="DISS" ToRole="BALL" />
         </EntityType>
         <EntityType Name="GRUP">
           <Key>
@@ -125,30 +124,11 @@
           <Property Name="LASTNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDGRUP" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="BALL" Relationship="PMModel.FK_BALL_SUDENT" FromRole="SUDENT" ToRole="BALL" />
-          <NavigationProperty Name="BALL1" Relationship="PMModel.FK_BALL_SUDENT1" FromRole="SUDENT" ToRole="BALL" />
+          <NavigationProperty Name="BALL" Relationship="Self.FK_BALL_SUDENT" FromRole="SUDENT" ToRole="BALL" />
         </EntityType>
-        <EntityContainer Name="PMEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="BALL" EntityType="Self.BALL" />
-          <EntitySet Name="DISS" EntityType="Self.DISS" />
-          <EntitySet Name="GRUP" EntityType="Self.GRUP" />
-          <EntitySet Name="SUDENT" EntityType="Self.SUDENT" />
-          <AssociationSet Name="FK_BALL_DISS" Association="PMModel.FK_BALL_DISS">
-            <End Role="DISS" EntitySet="DISS" />
-            <End Role="BALL" EntitySet="BALL" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BALL_SUDENT" Association="PMModel.FK_BALL_SUDENT">
-            <End Role="SUDENT" EntitySet="SUDENT" />
-            <End Role="BALL" EntitySet="BALL" />
-          </AssociationSet>
-          <AssociationSet Name="FK_BALL_SUDENT1" Association="PMModel.FK_BALL_SUDENT1">
-            <End Role="SUDENT" EntitySet="SUDENT" />
-            <End Role="BALL" EntitySet="BALL" />
-          </AssociationSet>
-        </EntityContainer>
         <Association Name="FK_BALL_DISS">
-          <End Type="PMModel.DISS" Role="DISS" Multiplicity="1" />
-          <End Type="PMModel.BALL" Role="BALL" Multiplicity="*" />
+          <End Role="DISS" Type="Self.DISS" Multiplicity="1" />
+          <End Role="BALL" Type="Self.BALL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DISS">
               <PropertyRef Name="IDDISS" />
@@ -159,20 +139,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_BALL_SUDENT">
-          <End Type="PMModel.SUDENT" Role="SUDENT" Multiplicity="1" />
-          <End Type="PMModel.BALL" Role="BALL" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SUDENT">
-              <PropertyRef Name="IDSTUDENT" />
-            </Principal>
-            <Dependent Role="BALL">
-              <PropertyRef Name="IDSUDENT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_BALL_SUDENT1">
-          <End Type="PMModel.SUDENT" Role="SUDENT" Multiplicity="1" />
-          <End Type="PMModel.BALL" Role="BALL" Multiplicity="*" />
+          <End Role="SUDENT" Type="Self.SUDENT" Multiplicity="1" />
+          <End Role="BALL" Type="Self.BALL" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SUDENT">
               <PropertyRef Name="IDSTUDENT" />
@@ -182,18 +150,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="PMEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BALL" EntityType="Self.BALL" />
+          <EntitySet Name="DISS" EntityType="Self.DISS" />
+          <EntitySet Name="GRUP" EntityType="Self.GRUP" />
+          <EntitySet Name="SUDENT" EntityType="Self.SUDENT" />
+          <AssociationSet Name="FK_BALL_DISS" Association="Self.FK_BALL_DISS">
+            <End Role="DISS" EntitySet="DISS" />
+            <End Role="BALL" EntitySet="BALL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALL_SUDENT" Association="Self.FK_BALL_SUDENT">
+            <End Role="SUDENT" EntitySet="SUDENT" />
+            <End Role="BALL" EntitySet="BALL" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище PMModelContainer" CdmEntityContainer="PMEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PMModelContainer" CdmEntityContainer="PMEntities1">
           <EntitySetMapping Name="BALL">
             <EntityTypeMapping TypeName="PMModel.BALL">
               <MappingFragment StoreEntitySet="BALL">
-                <ScalarProperty Name="IDSTUDENT" ColumnName="IDSTUDENT" />
                 <ScalarProperty Name="IDBALL" ColumnName="IDBALL" />
                 <ScalarProperty Name="IDDISS" ColumnName="IDDISS" />
+                <ScalarProperty Name="IDSTUDENT" ColumnName="IDSTUDENT" />
                 <ScalarProperty Name="BALL1" ColumnName="BALL" />
               </MappingFragment>
             </EntityTypeMapping>
