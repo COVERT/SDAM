@@ -14,10 +14,19 @@ namespace SDAM
     
     public partial class DISS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DISS()
+        {
+            this.BALL = new HashSet<BALL>();
+        }
+    
         public int IDDISS { get; set; }
         public string NAME { get; set; }
         public string PREPOD { get; set; }
         public string SEMESTOR { get; set; }
         public int GOD { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BALL> BALL { get; set; }
     }
 }

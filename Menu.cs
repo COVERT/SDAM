@@ -29,5 +29,11 @@ namespace SDAM
             Form formDIS = new DIS();
             formDIS.Show();
         }
+
+        private void buttonBALL_Click(object sender, EventArgs e)
+        {
+            Form formBALLL = new BALLL();
+            formBALLL.Show();
+        }
     }
 }

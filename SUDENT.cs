@@ -14,9 +14,18 @@ namespace SDAM
     
     public partial class SUDENT
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SUDENT()
+        {
+            this.BALL = new HashSet<BALL>();
+        }
+    
         public int IDSTUDENT { get; set; }
         public string LASTNAME { get; set; }
         public string NAME { get; set; }
         public int IDGRUP { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BALL> BALL { get; set; }
     }
 }

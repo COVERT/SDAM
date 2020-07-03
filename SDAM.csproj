@@ -58,6 +58,12 @@
     <Compile Include="BALL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BALLL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BALLL.Designer.cs">
+      <DependentUpon>BALLL.cs</DependentUpon>
+    </Compile>
     <Compile Include="DIS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <Compile Include="SUDENT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BALLL.resx">
+      <DependentUpon>BALLL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DIS.resx">
       <DependentUpon>DIS.cs</DependentUpon>
     </EmbeddedResource>

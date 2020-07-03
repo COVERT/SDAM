@@ -18,5 +18,8 @@ namespace SDAM
         public int IDDISS { get; set; }
         public int IDSUDENT { get; set; }
         public int BALL1 { get; set; }
+    
+        public virtual DISS DISS { get; set; }
+        public virtual SUDENT SUDENT { get; set; }
     }
 }

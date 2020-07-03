@@ -30,7 +30,7 @@
         {
             this.buttonSUDENT = new System.Windows.Forms.Button();
             this.buttonDIS = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonBALL = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSUDENT
@@ -53,21 +53,22 @@
             this.buttonDIS.UseVisualStyleBackColor = true;
             this.buttonDIS.Click += new System.EventHandler(this.buttonDIS_Click);
             // 
-            // button3
+            // buttonBALL
             // 
-            this.button3.Location = new System.Drawing.Point(52, 116);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonBALL.Location = new System.Drawing.Point(52, 116);
+            this.buttonBALL.Name = "buttonBALL";
+            this.buttonBALL.Size = new System.Drawing.Size(75, 23);
+            this.buttonBALL.TabIndex = 2;
+            this.buttonBALL.Text = "Баллы";
+            this.buttonBALL.UseVisualStyleBackColor = true;
+            this.buttonBALL.Click += new System.EventHandler(this.buttonBALL_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(196, 265);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonBALL);
             this.Controls.Add(this.buttonDIS);
             this.Controls.Add(this.buttonSUDENT);
             this.Name = "Menu";
@@ -80,6 +81,6 @@
 
         private System.Windows.Forms.Button buttonSUDENT;
         private System.Windows.Forms.Button buttonDIS;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonBALL;
     }
 }

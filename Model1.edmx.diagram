@@ -9,6 +9,8 @@
         <EntityTypeShape EntityType="PMModel.DISS" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PMModel.GRUP" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PMModel.SUDENT" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="PMModel.FK_BALL_DISS" />
+        <AssociationConnector Association="PMModel.FK_BALL_SUDENT" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
