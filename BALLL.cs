@@ -17,6 +17,7 @@ namespace SDAM
             InitializeComponent();
             sudent();
             diss();
+            vis();
         }
         void sudent()
         {
@@ -57,13 +58,15 @@ namespace SDAM
             {
                 
                 BALL ball = new BALL();
+                
                 ball.IDSUDENT = Convert.ToInt32(comboBoxSUDENT.SelectedIndex.ToString().Split()[0]);
                 ball.IDDISS = Convert.ToInt32(comboBoxDIS.SelectedIndex.ToString().Split()[0]);
                 ball.BALL1 = Convert.ToInt32(textBoxBALL.Text);
                 Program.BD.BALL.Add(ball);
                 Program.BD.SaveChanges();
-                sudent();
-                diss();
+                vis();
+
+
             }
             else
             {
@@ -102,6 +105,46 @@ namespace SDAM
 
 
             }
+        }
+        void vis()
+        {
+            ListViewBALL.Items.Clear();
+            foreach (BALL ball in Program.BD.BALL)
+            {
+                ListViewItem item = new ListViewItem(new string[]
+                {
+                    ball.SUDENT.LASTNAME,
+                    ball.SUDENT.NAME,
+                    Convert.ToString(ball.SUDENT.IDGRUP),
+                    ball.DISS.PREPOD,
+                    ball.DISS.SEMESTOR,
+                    Convert.ToString(ball.DISS.GOD),
+                    Convert.ToString(ball.BALL1),
+
+
+
+                });
+                item.Tag = ball;
+                ListViewBALL.Items.Add(item);
+            }
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (ListViewBALL.SelectedItems.Count == 1)
+            {
+                BALL ball = ListViewBALL.SelectedItems[0].Tag as BALL;
+                ball.IDSUDENT = Convert.ToInt32(comboBoxSUDENT.SelectedIndex.ToString().Split()[0]);
+                ball.IDDISS = Convert.ToInt32(comboBoxDIS.SelectedIndex.ToString().Split()[0]);
+                ball.BALL1 = Convert.ToInt32(textBoxBALL.Text);
+                Program.BD.SaveChanges();
+                vis();
+            }
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

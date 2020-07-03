@@ -11,7 +11,7 @@
           </Key>
           <Property Name="IDBALL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IDDISS" Type="int" Nullable="false" />
-          <Property Name="IDSUDENT" Type="int" Nullable="false" />
+          <Property Name="IDSTUDENT" Type="int" Nullable="false" />
           <Property Name="BALL" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="DISS">
@@ -62,7 +62,7 @@
               <PropertyRef Name="IDSTUDENT" />
             </Principal>
             <Dependent Role="BALL">
-              <PropertyRef Name="IDSUDENT" />
+              <PropertyRef Name="IDSTUDENT" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -94,6 +94,8 @@
           <Property Name="BALL1" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DISS" Relationship="PMModel.FK_BALL_DISS" FromRole="BALL" ToRole="DISS" />
           <NavigationProperty Name="SUDENT" Relationship="PMModel.FK_BALL_SUDENT" FromRole="BALL" ToRole="SUDENT" />
+          <Property Name="IDSTUDENT" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SUDENT1" Relationship="PMModel.FK_BALL_SUDENT1" FromRole="BALL" ToRole="SUDENT" />
         </EntityType>
         <EntityType Name="DISS">
           <Key>
@@ -124,6 +126,7 @@
           <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IDGRUP" Type="Int32" Nullable="false" />
           <NavigationProperty Name="BALL" Relationship="PMModel.FK_BALL_SUDENT" FromRole="SUDENT" ToRole="BALL" />
+          <NavigationProperty Name="BALL1" Relationship="PMModel.FK_BALL_SUDENT1" FromRole="SUDENT" ToRole="BALL" />
         </EntityType>
         <EntityContainer Name="PMEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BALL" EntityType="Self.BALL" />
@@ -135,6 +138,10 @@
             <End Role="BALL" EntitySet="BALL" />
           </AssociationSet>
           <AssociationSet Name="FK_BALL_SUDENT" Association="PMModel.FK_BALL_SUDENT">
+            <End Role="SUDENT" EntitySet="SUDENT" />
+            <End Role="BALL" EntitySet="BALL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BALL_SUDENT1" Association="PMModel.FK_BALL_SUDENT1">
             <End Role="SUDENT" EntitySet="SUDENT" />
             <End Role="BALL" EntitySet="BALL" />
           </AssociationSet>
@@ -163,6 +170,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_BALL_SUDENT1">
+          <End Type="PMModel.SUDENT" Role="SUDENT" Multiplicity="1" />
+          <End Type="PMModel.BALL" Role="BALL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUDENT">
+              <PropertyRef Name="IDSTUDENT" />
+            </Principal>
+            <Dependent Role="BALL">
+              <PropertyRef Name="IDSTUDENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -172,9 +191,9 @@
           <EntitySetMapping Name="BALL">
             <EntityTypeMapping TypeName="PMModel.BALL">
               <MappingFragment StoreEntitySet="BALL">
+                <ScalarProperty Name="IDSTUDENT" ColumnName="IDSTUDENT" />
                 <ScalarProperty Name="IDBALL" ColumnName="IDBALL" />
                 <ScalarProperty Name="IDDISS" ColumnName="IDDISS" />
-                <ScalarProperty Name="IDSUDENT" ColumnName="IDSUDENT" />
                 <ScalarProperty Name="BALL1" ColumnName="BALL" />
               </MappingFragment>
             </EntityTypeMapping>

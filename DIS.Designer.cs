@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DIS));
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -148,6 +149,7 @@
             // labelname
             // 
             this.labelname.AutoSize = true;
+            this.labelname.BackColor = System.Drawing.Color.White;
             this.labelname.Location = new System.Drawing.Point(12, 18);
             this.labelname.Name = "labelname";
             this.labelname.Size = new System.Drawing.Size(29, 13);
@@ -157,6 +159,7 @@
             // labelpregod
             // 
             this.labelpregod.AutoSize = true;
+            this.labelpregod.BackColor = System.Drawing.Color.White;
             this.labelpregod.Location = new System.Drawing.Point(12, 74);
             this.labelpregod.Name = "labelpregod";
             this.labelpregod.Size = new System.Drawing.Size(84, 13);
@@ -166,6 +169,7 @@
             // labelsem
             // 
             this.labelsem.AutoSize = true;
+            this.labelsem.BackColor = System.Drawing.Color.White;
             this.labelsem.Location = new System.Drawing.Point(12, 129);
             this.labelsem.Name = "labelsem";
             this.labelsem.Size = new System.Drawing.Size(50, 13);
@@ -175,6 +179,7 @@
             // labelgod
             // 
             this.labelgod.AutoSize = true;
+            this.labelgod.BackColor = System.Drawing.Color.White;
             this.labelgod.Location = new System.Drawing.Point(9, 181);
             this.labelgod.Name = "labelgod";
             this.labelgod.Size = new System.Drawing.Size(24, 13);
@@ -185,6 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(536, 299);
             this.Controls.Add(this.labelgod);
             this.Controls.Add(this.labelsem);
@@ -198,6 +204,7 @@
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.ListViewDIS);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DIS";
             this.Text = "DIS";
             this.ResumeLayout(false);

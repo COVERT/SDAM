@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SUDENTT));
             this.ListViewSUDENT = new System.Windows.Forms.ListView();
-            this.textBoxLASTNAME = new System.Windows.Forms.TextBox();
-            this.textBoxNAME = new System.Windows.Forms.TextBox();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBoxLASTNAME = new System.Windows.Forms.TextBox();
+            this.textBoxNAME = new System.Windows.Forms.TextBox();
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -64,20 +65,6 @@
             this.ListViewSUDENT.View = System.Windows.Forms.View.Details;
             this.ListViewSUDENT.SelectedIndexChanged += new System.EventHandler(this.ListViewSUDENT_SelectedIndexChanged);
             // 
-            // textBoxLASTNAME
-            // 
-            this.textBoxLASTNAME.Location = new System.Drawing.Point(11, 38);
-            this.textBoxLASTNAME.Name = "textBoxLASTNAME";
-            this.textBoxLASTNAME.Size = new System.Drawing.Size(100, 20);
-            this.textBoxLASTNAME.TabIndex = 12;
-            // 
-            // textBoxNAME
-            // 
-            this.textBoxNAME.Location = new System.Drawing.Point(11, 86);
-            this.textBoxNAME.Name = "textBoxNAME";
-            this.textBoxNAME.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNAME.TabIndex = 13;
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
@@ -93,6 +80,20 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "IDGRUP";
+            // 
+            // textBoxLASTNAME
+            // 
+            this.textBoxLASTNAME.Location = new System.Drawing.Point(11, 38);
+            this.textBoxLASTNAME.Name = "textBoxLASTNAME";
+            this.textBoxLASTNAME.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLASTNAME.TabIndex = 12;
+            // 
+            // textBoxNAME
+            // 
+            this.textBoxNAME.Location = new System.Drawing.Point(11, 86);
+            this.textBoxNAME.Name = "textBoxNAME";
+            this.textBoxNAME.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNAME.TabIndex = 13;
             // 
             // buttonDel
             // 
@@ -127,6 +128,7 @@
             // labelLASTNAME
             // 
             this.labelLASTNAME.AutoSize = true;
+            this.labelLASTNAME.BackColor = System.Drawing.Color.White;
             this.labelLASTNAME.Location = new System.Drawing.Point(11, 12);
             this.labelLASTNAME.Name = "labelLASTNAME";
             this.labelLASTNAME.Size = new System.Drawing.Size(66, 13);
@@ -136,6 +138,7 @@
             // labelNAME
             // 
             this.labelNAME.AutoSize = true;
+            this.labelNAME.BackColor = System.Drawing.Color.White;
             this.labelNAME.Location = new System.Drawing.Point(12, 61);
             this.labelNAME.Name = "labelNAME";
             this.labelNAME.Size = new System.Drawing.Size(32, 13);
@@ -145,6 +148,7 @@
             // labelGRUP
             // 
             this.labelGRUP.AutoSize = true;
+            this.labelGRUP.BackColor = System.Drawing.Color.White;
             this.labelGRUP.Location = new System.Drawing.Point(12, 109);
             this.labelGRUP.Name = "labelGRUP";
             this.labelGRUP.Size = new System.Drawing.Size(51, 13);
@@ -166,10 +170,11 @@
             this.textBoxGRUP.Size = new System.Drawing.Size(100, 20);
             this.textBoxGRUP.TabIndex = 22;
             // 
-            // Form1
+            // SUDENTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(460, 226);
             this.Controls.Add(this.textBoxGRUP);
             this.Controls.Add(this.comboBoxGRUP);
@@ -182,7 +187,8 @@
             this.Controls.Add(this.textBoxNAME);
             this.Controls.Add(this.textBoxLASTNAME);
             this.Controls.Add(this.ListViewSUDENT);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "SUDENTT";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

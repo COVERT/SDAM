@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BALLL));
             this.comboBoxSUDENT = new System.Windows.Forms.ComboBox();
             this.comboBoxDIS = new System.Windows.Forms.ComboBox();
             this.textBoxBALL = new System.Windows.Forms.TextBox();
@@ -100,6 +101,7 @@
             this.buttonDel.TabIndex = 24;
             this.buttonDel.Text = "УДАЛИТЬ";
             this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // buttonEdit
             // 
@@ -109,6 +111,7 @@
             this.buttonEdit.TabIndex = 23;
             this.buttonEdit.Text = "ОБНОВИТЬ";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonAdd
             // 
@@ -123,6 +126,7 @@
             // labelSUDENT
             // 
             this.labelSUDENT.AutoSize = true;
+            this.labelSUDENT.BackColor = System.Drawing.Color.White;
             this.labelSUDENT.Location = new System.Drawing.Point(13, 14);
             this.labelSUDENT.Name = "labelSUDENT";
             this.labelSUDENT.Size = new System.Drawing.Size(47, 13);
@@ -132,6 +136,7 @@
             // labelDIS
             // 
             this.labelDIS.AutoSize = true;
+            this.labelDIS.BackColor = System.Drawing.Color.White;
             this.labelDIS.Location = new System.Drawing.Point(13, 57);
             this.labelDIS.Name = "labelDIS";
             this.labelDIS.Size = new System.Drawing.Size(70, 13);
@@ -141,6 +146,7 @@
             // labelBALL
             // 
             this.labelBALL.AutoSize = true;
+            this.labelBALL.BackColor = System.Drawing.Color.White;
             this.labelBALL.Location = new System.Drawing.Point(13, 114);
             this.labelBALL.Name = "labelBALL";
             this.labelBALL.Size = new System.Drawing.Size(40, 13);
@@ -179,6 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(453, 247);
             this.Controls.Add(this.labelBALL);
             this.Controls.Add(this.labelDIS);
@@ -190,6 +197,7 @@
             this.Controls.Add(this.textBoxBALL);
             this.Controls.Add(this.comboBoxDIS);
             this.Controls.Add(this.comboBoxSUDENT);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BALLL";
             this.Text = "BALLL";
             this.ResumeLayout(false);

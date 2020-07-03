@@ -11,6 +11,7 @@
         <EntityTypeShape EntityType="PMModel.SUDENT" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="PMModel.FK_BALL_DISS" />
         <AssociationConnector Association="PMModel.FK_BALL_SUDENT" />
+        <AssociationConnector Association="PMModel.FK_BALL_SUDENT1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
